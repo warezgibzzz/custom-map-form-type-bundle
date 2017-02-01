@@ -12,6 +12,10 @@ var CustomMapWidgetClass = function (id, parameters) {
 
 CustomMapWidgetClass.prototype._init = function () {
     var _this = this;
-
+    $(id + ' img').imgNotes({
+        canEdit: true,
+        dragable: false,
+        zoomable: false
+    });
     return this;
 };

@@ -1,6 +1,8 @@
 {% block custom_map_widget %}
     {{ d }}
-    <div id="{{ id }}" class="{{ attr.class }}" style="width: {{ width }}px; height: {{ height }}px;"></div>
+    <div id="{{ id }}" class="{{ attr.class }}" style="width: {{ width }}px; height: {{ height }}px;">
+        <img src="{{ params.image }}">
+    </div>
 
     {% for child in form %}
         {% if child.vars.value is empty %}
