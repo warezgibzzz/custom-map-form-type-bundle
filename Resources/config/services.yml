@@ -2,8 +2,8 @@ services:
     warezgibzzz_custom_map.form.type.custom_map:
         class: Warezgibzzz\CustomMapFormTypeBundle\Form\Type\CustomMapType
         arguments:
-            - "%warezgibzzz_custom_map.size%"
-            - "%warezgibzzz_custom_map.default%"
-            - "%warezgibzzz_custom_map.parameters%"
+            - "%warezgibzzz_custom_map_form_type.size%"
+            - "%warezgibzzz_custom_map_form_type.default%"
+            - "%warezgibzzz_custom_map_form_type.parameters%"
         tags:
             - { name: form.type, alias: custom_map }
