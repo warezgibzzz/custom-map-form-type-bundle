@@ -22,6 +22,21 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->arrayNode('size')
+                    ->addDefaultsIfNotSet()
+
+                    ->children()
+                        ->scalarNode('width')
+                            ->cannotBeEmpty()
+                            ->defaultValue(640)
+                        ->end()
+
+                        ->scalarNode('height')
+                            ->cannotBeEmpty()
+                            ->defaultValue(480)
+                        ->end()
+                    ->end()
+                ->end()
                 ->arrayNode('default')
                     ->addDefaultsIfNotSet()
 
