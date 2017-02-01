@@ -38,6 +38,7 @@ class WarezgibzzzCustomMapFormTypeExtension extends Extension
      */
     protected function setParameters(ContainerBuilder $container, array $config)
     {
+        $container->setParameter('warezgibzzz_custom_map.size',    $config['size']);
         $container->setParameter('warezgibzzz_custom_map.default',    $config['default']);
         $container->setParameter('warezgibzzz_custom_map.parameters', $config['parameters']);
     }
