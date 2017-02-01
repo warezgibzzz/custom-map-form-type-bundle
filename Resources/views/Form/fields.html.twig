@@ -1,7 +1,7 @@
 {% block custom_map_widget %}
-    <pre>{{ parameters|dump }}</pre>
+    <pre>{{ dump(parameters) }}</pre>
     <div id="{{ id }}" class="{{ attr.class }}" style="width: {{ width }}px; height: {{ height }}px;">
-        <img src="{{ params.image }}">
+        <img src="{{ parameters.image }}">
     </div>
 
     {% for child in form %}
