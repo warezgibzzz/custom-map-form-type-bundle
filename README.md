@@ -1,22 +1,15 @@
-# YandexMapsFormTypeBundle
+# CustomMapFormTypeBundle
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/it-blaster/yandex-maps-form-type-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/it-blaster/yandex-maps-form-type-bundle/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/it-blaster/yandex-maps-form-type-bundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/it-blaster/yandex-maps-form-type-bundle/build-status/master)
-[![License](https://poser.pugx.org/it-blaster/yandex-maps-form-type-bundle/license.svg)](https://packagist.org/packages/it-blaster/yandex-maps-form-type-bundle)
-[![Total Downloads](https://poser.pugx.org/it-blaster/yandex-maps-form-type-bundle/downloads)](https://packagist.org/packages/it-blaster/yandex-maps-form-type-bundle)
-[![Latest Unstable Version](https://poser.pugx.org/it-blaster/yandex-maps-form-type-bundle/v/unstable.svg)](https://packagist.org/packages/it-blaster/yandex-maps-form-type-bundle)
-[![Latest Stable Version](https://poser.pugx.org/it-blaster/yandex-maps-form-type-bundle/v/stable.svg)](https://packagist.org/packages/it-blaster/yandex-maps-form-type-bundle)
-
-Set the latitude and longitude using Yandex Maps
+Set the latitude and longitude using Custom Map
 
 ## Installation
 
-Add it-blaster/yandex-maps-form-type-bundle to your `composer.json` file and run `composer`
+Add warezgibzzz/custom-map-form-type-bundle to your `composer.json` file and run `composer`
 
 ```json
 ...
 "require": {
-    "it-blaster/yandex-maps-form-type-bundle": "1.0.*"
+    "warezgibzzz/custom-map-form-type-bundle": "dev-master"
 }
 ...
 ```
@@ -25,7 +18,7 @@ Register the bundle in your `AppKernel.php`
 
 ```php
 ...
-new Fenrizbes\YandexMapsFormTypeBundle\FenrizbesYandexMapsFormTypeBundle(),
+new Warezgibzzz\CustomMapFormTypeBundle\WarezgibzzzCustomMapFormTypeBundle(),
 ...
 ```
 
@@ -33,17 +26,19 @@ Include bundle's scripts in your page:
 
 ```html
 ...
-<script src="{{ asset('bundles/fenrizbesyandexmapsformtype/js/yandex_maps_widget.js') }}"></script>
+<script src="{{ asset('bundles/warezgibzzzcustommapformtype/js/imgViewer.min.js') }}"></script>
+<script src="{{ asset('bundles/warezgibzzzcustommapformtype/js/imgNotes.min.js') }}"></script>
+<script src="{{ asset('bundles/warezgibzzzcustommapformtype/js/custom_map_widget.js') }}"></script>
 ...
 ```
 
 ## Usage
 
-Just set the `yandex_maps` FormType for your field as follows:
+Just set the `custom_map` FormType for your field as follows:
 
 ```php
 ...
-    ->add('coordinates', 'yandex_maps')
+    ->add('coordinates', 'custom_map')
 ...
 ```
 
@@ -56,21 +51,15 @@ There are a few options that you can pass:
 
 ```php
 ...
-    ->add('coordinates', 'yandex_maps', array(
+    ->add('coordinates', 'custom_map', array(
         'width'      => 640,      // The map's width
         'height'     => 480,      // The map's height
         'default'    => array(
-            'lat' => 55.75319, // The default latitude value
-            'lng' => 37.619953 // The default longitude value
+            'x' => 5, // The default latitude value
+            'y' => 6 // The default longitude value
         ),
         'parameters' => array(
-            'type'          => 'yandex#map', // The default map's type
-            'zoom'          => 11,           // The initial zoom size
-            'scrollZoom'    => false,        // Enable/disable scroll zoom
-            'searchSupport' => false,        // Enable/disable searching objects by searchControl
-            'controls'      => array(        // Enabled map's controls
-                'zoomControl'
-            )
+            'image' => 'http://placehold.it/640x480', // The map image
         )
     ))
 ...
@@ -82,18 +71,14 @@ You can configure default values for type's options to avoid passing them every 
 
 ```yml
 ...
-fenrizbes_yandex_maps_form_type:
+warezgibzzz_custom_map_form_type:
     size:
         width:  640
         height: 480
     default:
-        lat: 55.75319
-        lng: 37.619953
+        x: 5
+        y: 6
     parameters:
-        type:          'yandex#map'
-        zoom:          11
-        scrollZoom:    false
-        searchControl: false
-        controls:      [ 'zoomControl' ]
+        image: 'custom#map'
 ...
 ```

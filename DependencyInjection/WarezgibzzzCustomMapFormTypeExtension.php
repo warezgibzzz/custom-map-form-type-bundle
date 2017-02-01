@@ -1,6 +1,6 @@
 <?php
 
-namespace Fenrizbes\YandexMapsFormTypeBundle\DependencyInjection;
+namespace Warezgibzzz\CustomMapFormTypeBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class FenrizbesYandexMapsFormTypeExtension extends Extension
+class WarezgibzzzCustomMapFormTypeExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -38,9 +38,8 @@ class FenrizbesYandexMapsFormTypeExtension extends Extension
      */
     protected function setParameters(ContainerBuilder $container, array $config)
     {
-        $container->setParameter('fenrizbes_yamap.size',       $config['size']);
-        $container->setParameter('fenrizbes_yamap.default',    $config['default']);
-        $container->setParameter('fenrizbes_yamap.parameters', $config['parameters']);
+        $container->setParameter('warezgibzzz_custom_map.default',    $config['default']);
+        $container->setParameter('warezgibzzz_custom_map.parameters', $config['parameters']);
     }
 
     /**
@@ -54,7 +53,7 @@ class FenrizbesYandexMapsFormTypeExtension extends Extension
 
         if (in_array('twig', $templatingEngines)) {
             $container->setParameter('twig.form.resources', array_merge(
-                array('FenrizbesYandexMapsFormTypeBundle:Form:fields.html.twig'),
+                array('WarezgibzzzCustomMapFormTypeBundle:Form:fields.html.twig'),
                 $container->getParameter('twig.form.resources')
             ));
         }

@@ -1,24 +1,24 @@
 {
-    "name": "it-blaster/yandex-maps-form-type-bundle",
-    "description": "Set the latitude and longitude using Yandex Maps",
-    "keywords": ["symfony", "form", "yandex maps"],
-    "homepage": "https://github.com/it-blaster/yandex-maps-form-type-bundle",
+    "name": "warezgibzzz/custom-map-form-type-bundle",
+    "description": "Set the coords using custom image",
+    "keywords": ["symfony", "form", "map", "image"],
+    "homepage": "https://github.com/warezgibzzz/custom-map-form-type-bundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "Yaroslav Gashuk",
-            "email": "fenrizbes@yandex.ru"
+            "name": "Pavel Poronko",
+            "email": "me@gibzzz.tk"
         }
     ],
     "require": {
-        "php": ">=5.3.2",
-        "symfony/framework-bundle": "~2.1"
+        "php": ">=5.4.0",
+        "symfony/framework-bundle": "^2.7 || ^3.0"
     },
     "autoload": {
         "psr-0": {
-            "Fenrizbes\\YandexMapsFormTypeBundle": ""
+            "Warezgibzzz\\CustomMapFormTypeBundle": ""
         }
     },
     "minimum-stability": "dev",
-    "target-dir": "Fenrizbes/YandexMapsFormTypeBundle"
+    "target-dir": "Warezgibzzz/CustomMapFormTypeBundle"
 }

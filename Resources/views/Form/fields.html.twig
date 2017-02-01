@@ -1,4 +1,5 @@
-{% block yandex_maps_widget %}
+{% block custom_map_widget %}
+    {{ d }}
     <div id="{{ id }}" class="{{ attr.class }}" style="width: {{ width }}px; height: {{ height }}px;"></div>
 
     {% for child in form %}
@@ -12,6 +13,6 @@
     {% endfor %}
 
     <script>
-        var {{ name }}YandexMap = new YandexMapsWidgetClass('{{ id }}', {{ parameters | json_encode | raw }});
+        var {{ name }}CustomMap = new CustomMapWidgetClass('{{ id }}', {{ parameters | json_encode | raw }});
     </script>
 {% endblock %}

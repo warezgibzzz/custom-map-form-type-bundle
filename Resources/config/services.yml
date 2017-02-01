@@ -1,9 +1,9 @@
 services:
-    fenrizbes_yandex_maps.form.type.yandex_maps:
-        class: Fenrizbes\YandexMapsFormTypeBundle\Form\Type\YandexMapsType
+    warezgibzzz_custom_map.form.type.custom_map:
+        class: Warezgibzzz\CustomMapFormTypeBundle\Form\Type\CustomMapType
         arguments:
-            - %fenrizbes_yamap.size%
-            - %fenrizbes_yamap.default%
-            - %fenrizbes_yamap.parameters%
+            - "%warezgibzzz_custom_map.size%"
+            - "%warezgibzzz_custom_map.default%"
+            - "%warezgibzzz_custom_map.parameters%"
         tags:
-            - { name: form.type, alias: yandex_maps }
+            - { name: form.type, alias: custom_map }
