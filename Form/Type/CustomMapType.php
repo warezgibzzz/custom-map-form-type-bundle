@@ -48,7 +48,7 @@ class CustomMapType extends AbstractType
      */
     public function getName()
     {
-        return 'yandex_maps';
+        return 'custom_map';
     }
 
     /**
