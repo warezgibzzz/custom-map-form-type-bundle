@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('warezgibzzz_custom_map');
+        $rootNode = $treeBuilder->root('warezgibzzz_custom_map_form_type');
 
         $rootNode
             ->children()
