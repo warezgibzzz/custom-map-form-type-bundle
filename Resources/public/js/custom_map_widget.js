@@ -8,19 +8,39 @@ var CustomMapWidgetClass = function (id, parameters) {
     this.placemark = null;
 
     this._init();
+    this._placeMarker();
 };
 
 CustomMapWidgetClass.prototype._init = function () {
     var _this = this;
+    console.log(_this.id);
+    console.log($(_this.id + ' img').length);
     $('#' + _this.id + ' img').imgViewer({
+        canEdit: true,
         dragable: false,
         zoomable: false,
         onClick: function (e, self) {
-            var cursorPos = self.cursorToImg(e.pageX, e.pageY);
-            var relativePos = self.imgToView(cursorPos.x, cursorPos.y);
-            _this.x_input.value = relativePos.x;
-            _this.y_input.value = relativePos.y;
+            _this.addMarker(e, self);
         }
     });
     return this;
+};
+
+CustomMapWidgetClass.prototype.addMarker = function (e, imgViewer) {
+    console.log(e, imgViewer);
+    var relPos = imgViewer.cursorToImg(e.pageX, e.pageY);
+    var viewPos = imgViewer.imgToView(relPos.x, relPos.y);
+
+    console.log(relPos, viewPos);
+    this.x_input.value = viewPos.x;
+    this.y_input.value = viewPos.y;
+    $('.viewport').find('div').remove();
+    // Add marker
+    $('<div style="width: 78px; height: 78px; border-radius: 50%; background: #fff; position: absolute; left: ' + (parseInt(viewPos.x) - 39) + 'px; top: ' + (parseInt(viewPos.y) - 39) + 'px; z-index: 4;"/>').appendTo('.viewport');
+};
+
+CustomMapWidgetClass.prototype._placeMarker = function () {
+    $viewport = $(document).find('.viewport');
+
+    $('<div style="width: 78px; height: 78px; border-radius: 50%; background: #fff; position: absolute; left: ' + (parseInt(this.x_input.value) - 39) + 'px; top: ' + (parseInt(this.y_input.value) - 39) + 'px; z-index: 4;"/>').appendTo($viewport);
 };
