@@ -6,9 +6,11 @@ var CustomMapWidgetClass = function (id, parameters) {
     this.parameters = parameters;
     this.map = null;
     this.placemark = null;
-
-    this._init();
-    this._placeMarker();
+    var _this = this;
+    $(document).ready(function () {
+        _this._init();
+        _this._placeMarker();
+    });
 };
 
 CustomMapWidgetClass.prototype._init = function () {
