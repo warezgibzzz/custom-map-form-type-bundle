@@ -12,12 +12,15 @@ var CustomMapWidgetClass = function (id, parameters) {
 
 CustomMapWidgetClass.prototype._init = function () {
     var _this = this;
-    console.log(_this.id);
-    console.log($(_this.id + ' img').length);
-    $('#' + _this.id + ' img').imgNotes({
-        canEdit: true,
+    $('#' + _this.id + ' img').imgViewer({
         dragable: false,
-        zoomable: false
+        zoomable: false,
+        onClick: function (e, self) {
+            var cursorPos = self.cursorToImg(e.pageX, e.pageY);
+            var relativePos = self.imgToView(cursorPos.x, cursorPos.y);
+            _this.x_input.value = relativePos.x;
+            _this.y_input.value = relativePos.y;
+        }
     });
     return this;
 };
