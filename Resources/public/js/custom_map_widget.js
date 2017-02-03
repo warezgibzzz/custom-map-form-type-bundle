@@ -18,12 +18,15 @@ CustomMapWidgetClass.prototype._init = function () {
     console.log(_this.id);
     console.log($(_this.id + ' img').length);
     $('#' + _this.id + ' img').imgViewer({
-        canEdit: true,
+        canEdit: false,
         dragable: false,
         zoomable: false,
         onClick: function (e, self) {
             _this.addMarker(e, self);
         }
+    });
+    $(document).find('.sonata-ba-action').on('click', function () {
+        $(window).trigger('resize');
     });
     return this;
 };
