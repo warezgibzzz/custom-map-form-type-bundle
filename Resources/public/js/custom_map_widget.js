@@ -11,13 +11,13 @@ var CustomMapWidgetClass = function (id, parameters) {
         _this._init();
         _this._placeMarker();
     });
-    $('.nav.nav-tabs').on('click', function () {
+    $(document).on('click', '.nav.nav-tabs',  function () {
         function init() {
             _this._init();
             _this._placeMarker();
         }
 
-        setTimeout(init, 500);
+        setTimeout(init, 1000);
     })
 
 };
