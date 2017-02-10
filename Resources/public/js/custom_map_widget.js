@@ -11,6 +11,15 @@ var CustomMapWidgetClass = function (id, parameters) {
         _this._init();
         _this._placeMarker();
     });
+    $('.nav.nav-tabs').on('click', function () {
+        function init() {
+            _this._init();
+            _this._placeMarker();
+        }
+
+        setTimeout(init, 500);
+    })
+
 };
 
 CustomMapWidgetClass.prototype._init = function () {
