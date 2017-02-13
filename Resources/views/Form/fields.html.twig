@@ -1,6 +1,6 @@
 {% block custom_map_widget %}
-    <div id="{{ id }}" class="{{ attr.class }}" style="width: {{ width }}px; height: {{ height }}px;">
-        <img src="{{ parameters.image }}">
+    <div id="{{ id }}" class="{{ attr.class }}" style="width: {{ width }}px; height: {{ height }}px; overflow: hidden">
+        <img src="{{ parameters.image }}" style="margin-left: -640px">
     </div>
 
     {% for child in form %}
